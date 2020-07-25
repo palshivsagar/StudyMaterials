@@ -1,0 +1,162 @@
+Q1)What is a Spring Bean?
+Ans: Any Java class written in Spring is called a Spring Bean
+
+Q2)What are Bean Dependencies?
+Ans: Fields/Variables declared in the Beans are called as Bean Dependencies.
+
+Q3) What is called as injection?
+Ans: Initialisation of properties in a bean is called as Injection.
+
+Q4)What is Dependency Injection?
+Ans:Process of injecting Bean Dependencies automatically in a Bean is called as Dependency Injection.
+
+Q5) How many ways are there to Implement Dependency Injection?
+Ans: 3 Ways; ConstructorInjection, SetterInjection, Field Injection.
+
+Q6)What is Setter injection? How can we Implement it?
+Ans:
+
+Q7)What is Constructor Injection? How can we Implement it?
+Ans:
+
+Q8)What is Field Injection? How can we Implement it?
+Ans:
+
+Q9)What is the use of Spring Configuration Class?
+Ans: It is used to define Bean definitions
+
+Q10)Where can we define our Beans?
+Ans:In the Spring Configuration Class
+
+Q11)What is the use of @Configuration Annotation?
+Ans:It is used to mark the configuration class where beans are defined.
+
+Q12) What happens if I dont use @Configuration?
+Ans:
+
+Q13) What is the use of @Bean Annotation?
+Ans:It is used to write the Bean Definition.
+
+Q14)What happens if I dont specify @Bean Annotation?
+Ans: At Container startup it checks whether any method is marked with @Bean or not. If not marked, it will not consider it as a Bean definition and throws Exception since the Bean is not found.
+
+
+Q15) What is the default name of a Bean?
+Ans: It's Method Name
+
+Q16) How to specify required name for a Bean?
+Ans: @Bean("<BeanName>")
+
+Q17)How to create ApplicationContext?
+Ans: ApplicationContext ctx= new AnnotationConfigApplicationContext(<ConfigurationClassName.class>);
+
+Q18)How can I access bean Instance from Spring Container?
+Ans: Using getBean() method
+
+Q19)What happens when specified Bean Name is not found in the container?
+Ans: Throws NoSuchBeanFoundException at runtime.
+
+Q20)Can I have two beans with same name?
+Ans: No, Bean names should always be unique.
+
+Q21)Can I have two Beans with same data types?
+Ans:Yes
+
+Q22)What are Bean Scopes?
+Ans:
+
+Q23)What is the default Bean Scope?
+Ans:Singleton Scope
+
+Q24)How to specify required Bean Scope?
+Ans: Using @Scope Annotation
+
+Q25)What happens when Bean Scope is Singleton?
+Ans:By default, it will be aggressively loaded one time into the conatiner at container startup
+
+Q26)What happens when Bean Scope is Prototype?
+Ans:By default, it will be lazily loaded multiple times into the container whenever getBeans() method is called.
+
+Q27)When Bean instance will be created if Bean scope is Singleton?
+Ans: At Container startup
+
+Q28)When Bean instance will be created if Bean scope is Prototype?
+Ans: When getBean() method is called.
+
+Q29)What are the Loading types available in spring?
+Ans: Aggressive and Lazy Loading types
+
+Q30)What is the default Loading Type?
+Ans:It Depends on Bean Scope
+
+Q31)How to specify the required Loading Type?
+Ans:Using @Lazy Annotation
+
+Q32)What happens when loading type is Aggressive?
+Ans:
+
+Q33)What happens when loading type is Lazy?
+Ans:
+
+Q34)When is the Bean Instance created if Loading Type is Aggressive?
+Ans: At Spring Container startup
+
+Q35)When is the Bean Instance created if Loading Type is Lazy?
+Ans: Whenever getBean() method is invoked
+
+Q36)What is the default loading type for Singleton beans?
+Ans:Aggressive Loading
+
+Q37)What is the default loading type for Prototype beans?
+Ans:Lazy Loading
+
+Q38)When Bean Instance is created if I specify Aggressive Loading for Singleton?
+Ans:At Spring container startup.
+
+Q39)When Bean Instance is created if I specify Lazy Loading for Singleton?
+Ans:When we call getBean() Method
+
+Q40)When Bean Instance is created if I specify Aggressive Loading for Prototype?
+Ans:When we call getBean() Method
+
+Q41)When Bean Instance is created if I specify Lazy Loading for Prototype?
+Ans:When we call getBean() Method
+
+Q42)How many times a single Bean is loaded?
+Ans: only one time
+
+Q43)How many times a Bean will be Instantiated?
+Ans: It depends on the scope of the Bean.
+
+Q44) Can i restrict the maximum number of instances to create for a Bean?
+Ans: NO
+
+Q45a)How can I make only 5 Singletons?
+Ans define 5 singleton Beans
+
+Q45b) I want to talk to MySQL and Oracle. I need only Two Data Source objects. How to get exactly Two DataSource Objects?
+Ans: define Two DataSource as Singletons.
+
+Q46)What is the order of loading the Beans into Spring Container?
+Ans: All Beans will be loaded in the order we define in the configuration class. The loading order may change depending on the Bean dependencies.
+
+---Answer the following questions based on Lab1----
+
+Q47)Beans are configured in the order A,B,Hello. What is the Loading Order?
+Ans:Loading Order A, B , Hello
+
+Q48)Beans are configured in the order B,A,Hello. What is the Loading Order?
+Ans:Loading Order A, B , Hello
+
+Q49)Beans are configured in the order A,B,Hello & createHello(A ao, B bo). What is the Loading Order?
+Ans:Loading Order A, B , Hello
+
+Q50)Beans are configured in the order A,B,Hello & createHello(B bo, A ao). What is the Loading Order?
+Ans:Loading Order B, A , Hello
+
+
+
+
+
+
+
